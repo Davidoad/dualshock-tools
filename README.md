@@ -29,3 +29,6 @@ function updateGamepad() {
 }
 
 updateGamepad();
+git add .
+git commit -m "Initial site with Gamepad API"
+git push origin main
