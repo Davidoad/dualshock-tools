@@ -14,3 +14,18 @@ cd dualshock-tools
   <script src="script.js"></script>
 </body>
 </html>
+window.addEventListener("gamepadconnected", (e) => {
+  console.log("Gamepad connected:", e.gamepad);
+});
+
+function updateGamepad() {
+  const gamepads = navigator.getGamepads();
+  const gp = gamepads[0];
+  if (gp) {
+    console.log("Axes:", gp.axes);
+    console.log("Buttons:", gp.buttons.map(btn => btn.pressed));
+  }
+  requestAnimationFrame(updateGamepad);
+}
+
+updateGamepad();
